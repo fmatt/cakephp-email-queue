@@ -73,7 +73,7 @@ class SenderShell extends Shell
                 $email = $this->_newEmail($configName);
 
                 if (!empty($e->from_email) && !empty($e->from_name)) {
-                    $email->from($e->from_email, $e->from_name);
+                    $email->replyTo($e->from_email, $e->from_name);
                 }
 
                 $transport = $email->transport();
